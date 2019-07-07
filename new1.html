@@ -1,0 +1,32 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>孟诗奥的个人主页</title>
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/new.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div id="logo"><a href="new1.html"></a></div>
+        <nav class="topnav" id="topnav"><a href="index.html"><span>主页</span><span class="en">Protal</span></a><a href="about.html"><span>关于我</span><span class="en">About</span></a></nav>
+    </header>
+    <article class="blogs">
+        <h1 class="t_nav"><span>您当前的位置：<a href="index.html">主页</a>&nbsp;&gt;&nbsp;<a href="new1.html">日志</a></span><a href="index.html" class="n1">主页</a><a href="new1.html" class="n2">日志</a></h1>
+        <div class="index_about">
+            <h2 class="c_titile">web前端小学期实验总结（1）</h2>
+            <p class="box_c"><span class="d_time">发布时间：2019-07-07</span><span>作者：白天犯困晚上精神的MSA</span></p>
+            <ul class="infos">
+                <p>小学期的第一周完成了两个基础实验，分别要求制作一个个人主页和完成OJ平台上的相应题目，这里写一下在完成“基础实验2：JavaScript基础”时的想法和思路。</p>
+                <p>实验2一共有5道题，要求完成3道必做题并完成2道选做题中的至少1道。</p>
+                <p>题目1要求实现一个计算给定日期数组中的每一个日期相对于DDL日期的延迟情况。对于一个给定的日期，首先先判断其是否超过了DDL。由于JavaScript中比较字符串大小是按照字典序进行比较的，而日期的格式又是固定的，因此可以直接比较日期字符串和DDL字符串的大小来判断给定的日期是否超过了DDL。若给定的日期超过了DDL，为了计算延期的天数，这里利用JavaScript中与日期相关的函数，如setFullYear()、setHours()等，将给定的日期与DDL都转化为JavaScript中的日期格式，再计算两个日期的差值，从而可得出延期的天数。</p>
+                <p>题目2要求利用JavaScript实现一个简单的迭代器，具体即实现一个TreeIterator类来完成多叉树的先序遍历，对外提供迭代器接口。这里利用JavaScript中的数组的push()和pop()，将数组看成一个栈的结构来辅助迭代器的实现。在构造函数中，设置一个whenext变量来判断是否有下一个元素，同时判断树是否为空来设置whenext变量的值，并在树不为空时将根节点入栈。题目要求补充的另外两个函数是has_next()和next_value()，has_next()函数的实现只需返回whenext变量的值即可。在next_value()中，先将栈顶元素出栈，再将栈顶元素的子结点逆向入栈，栈空则意味着没有下一个元素了，因此栈空时将whenext变量设置为false。</p>
+                <p>题目3要求实现一个类似于map函数的函数fmap，将传入的方法应用于数组中的每一个原子元素。这里递归地实现fmap，判断数组中每一个元素的类型，如果是整数则将传入的方法应用于该整数，如果是数组则对数组再应用fmap函数。</p>
+                <p>题目4.1要求实现一个定义运算符的函数。这里只需要模拟中缀表达式转后缀表达式、后缀表达式求值两个过程。在实现同样利用数组的push()和pop()，将数组看成一个栈的结构。由于给定的表达式中的运算符号都是相同的，因此在转后缀表达式时一旦遇到运算符则无需比较优先级，直接弹出栈中运算符直至栈空或者遇到左括号。在求值时，对于除法，每一步都利用JavaScript中的Math.floor函数对运算结果向下取整。题目4.2要求实现一个函数来判断在给定的地图中推箱子是否可以成功。这是一个典型的迷宫搜索问题。推箱子的过程可以分为两个阶段，第一个阶段是搬运工走到箱子所在位置的上、下、左或右，第二阶段是搬运工和箱子一起移动直至箱子到达目标位置。第一阶段与普通的bfs无区别，第二阶段则需让搬运工和箱子一起移动。</p>
+            </ul>
+        </div>
+        <aside class="right"></aside>
+    </article>
+    <script src="js/silder.js"></script>
+</body>
+</html>
