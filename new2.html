@@ -1,0 +1,32 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>孟诗奥的个人主页</title>
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/new.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div id="logo"><a href="new2.html"></a></div>
+        <nav class="topnav" id="topnav"><a href="index.html"><span>主页</span><span class="en">Protal</span></a><a href="about.html"><span>关于我</span><span class="en">About</span></a></nav>
+    </header>
+    <article class="blogs">
+        <h1 class="t_nav"><span>您当前的位置：<a href="index.html">主页</a>&nbsp;&gt;&nbsp;<a href="new2.html">日志</a></span><a href="index.html" class="n1">主页</a><a href="new2.html" class="n2">日志</a></h1>
+        <div class="index_about">
+            <h2 class="c_titile">web前端小学期实验总结（2）</h2>
+            <p class="box_c"><span class="d_time">发布时间：2019-07-12</span><span>作者：白天犯困晚上精神的MSA</span></p>
+            <ul class="infos">
+                <p>第四次实验中使用了express框架。</p>
+                <p>为了实现静态文件服务的搭建，查阅了相关资料后发现可以在项目下单设一个存放静态文件的文件夹，并通过express.static(静态文件夹目录)来实现对静态文件的访问。</p>
+                <p>API服务搭建部分，按照实验对各个请求的要求实现即可。最开始使用了body-parser作为中间件，但是发现无法正确解析`Content-Type='multipart/form-data'`类型的请求。解决方法是利用multer或者connect-multiparty，二者皆可解析`Content-Type='multipart/form-data'`类型的请求。</p>
+                <p>本次实验的访问地址如下所示：</p>
+                <p>静态文件访问地址：http://62.234.145.150:8000/</p>
+                <p>API实现url：http://62.234.145.150:8000/api/compute   http://62.234.145.150:8000/api/pair</p>
+            </ul>
+        </div>
+        <aside class="right"></aside>
+    </article>
+    <script src="js/silder.js"></script>
+</body>
+</html>
